@@ -207,7 +207,7 @@ const Select: React.FC<SelectProps> = ({
                     onClick={toggle}
                     className={getSelectClass()}
                 >
-                    <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1">
+                    <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full px-2 py-3">
                         {!isMultiple ? (
                             <p className="truncate cursor-default select-none">
                                 {value && !Array.isArray(value) ? value.label : placeholder}

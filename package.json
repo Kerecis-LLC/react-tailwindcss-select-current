@@ -8,7 +8,7 @@
     "author": "onesine",
     "license": "MIT",
     "scripts": {
-        "watch": "rollup -c -w",
+        "watch": "rollup -c",
         "clean": "rm -rf dist",
         "tailwind-build": "tailwindcss -i ./src/index.css -o ./dist/index.css --minify",
         "lint": "eslint .",
