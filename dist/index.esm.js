@@ -424,7 +424,7 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
             onChange(result.length ? result : null);
         }
     }, [isMultiple, onChange, value]);
-    const getSelectClass = useCallback(() => {
+    useCallback(() => {
         let ringColor = THEME_DATA.ring[DEFAULT_THEME];
         if (COLORS.includes(primaryColor)) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -458,8 +458,8 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
             classNames
         }, value: value, handleValueChange: handleValueChange },
         React.createElement("div", { className: "relative w-full", ref: ref },
-            React.createElement("div", { tabIndex: 0, "aria-expanded": open, onKeyDown: onPressEnterOrSpace, onClick: toggle, className: getSelectClass() },
-                React.createElement("div", { className: "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full px-2 py-3" }, !isMultiple ? (React.createElement("p", { className: "truncate cursor-default select-none" }, value && !Array.isArray(value) ? value.label : placeholder)) : (React.createElement(React.Fragment, null,
+            React.createElement("div", { tabIndex: 0, "aria-expanded": open, onKeyDown: onPressEnterOrSpace, onClick: toggle, className: "bg-white cursor-default rounded-lg text-left border outline-16 border-primary px-3 placeholder-primary-500 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-primary-500 sm:text-sm flex" },
+                React.createElement("div", { className: "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full" }, !isMultiple ? (React.createElement("p", { className: "truncate cursor-default select-none" }, value && !Array.isArray(value) ? value.label : placeholder)) : (React.createElement(React.Fragment, null,
                     value === null && placeholder,
                     Array.isArray(value) &&
                         value.map((item, index) => (React.createElement("div", { className: getTagItemClass(), key: index },

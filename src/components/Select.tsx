@@ -205,9 +205,9 @@ const Select: React.FC<SelectProps> = ({
                     aria-expanded={open}
                     onKeyDown={onPressEnterOrSpace}
                     onClick={toggle}
-                    className={getSelectClass()}
+                    className="bg-white cursor-default rounded-lg text-left border outline-16 border-primary px-3 placeholder-primary-500 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-primary-500 sm:text-sm flex"
                 >
-                    <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full px-2 py-3">
+                    <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full">
                         {!isMultiple ? (
                             <p className="truncate cursor-default select-none">
                                 {value && !Array.isArray(value) ? value.label : placeholder}
