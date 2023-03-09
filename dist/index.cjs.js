@@ -359,7 +359,7 @@ const SearchInput = ({ placeholder = "", value = "", onChange, name = "" }) => {
     return (require$$0__default["default"].createElement("div", { className: classNames && classNames.searchContainer
             ? classNames.searchContainer
             : "relative py-1 px-2.5" },
-        require$$0__default["default"].createElement("input", { className: "w-full py-2 p2-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none", type: "text", placeholder: placeholder, value: value, onChange: onChange, name: name })));
+        require$$0__default["default"].createElement("input", { className: "w-full py-2 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none", type: "text", placeholder: placeholder, value: value, onChange: onChange, name: name })));
 };
 
 const Spinner = ({ primaryColor = DEFAULT_THEME }) => {
@@ -467,7 +467,7 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
             : defaultClass;
     }, [classNames, isDisabled, primaryColor]);
     const getTagItemClass = require$$0.useCallback(() => {
-        const baseClasse = "bg-gray-200 border rounded-sm flex space-x-1";
+        const baseClasse = "flex space-x-1";
         const disabledClass = isDisabled ? "border-gray-500 px-1" : "pl-1";
         return classNames && classNames.tagItem
             ? classNames.tagItem({ isDisabled })

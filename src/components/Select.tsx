@@ -182,7 +182,7 @@ const Select: React.FC<SelectProps> = ({
     }, [classNames, isDisabled, primaryColor]);
 
     const getTagItemClass = useCallback(() => {
-        const baseClasse = "bg-gray-200 border rounded-sm flex space-x-1";
+        const baseClasse = "flex space-x-1";
         const disabledClass = isDisabled ? "border-gray-500 px-1" : "pl-1";
         return classNames && classNames.tagItem
             ? classNames.tagItem({ isDisabled })
