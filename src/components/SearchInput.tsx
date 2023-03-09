@@ -25,13 +25,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
                     : "relative py-1 px-2.5"
             }
         >
-            <SearchIcon
-                className={
-                    classNames && classNames.searchIcon
-                        ? classNames.searchIcon
-                        : "absolute w-5 h-5 mt-2.5 pb-0.5 ml-2 text-gray-500"
-                }
-            />
             <input
                 className={
                     classNames && classNames.searchBox

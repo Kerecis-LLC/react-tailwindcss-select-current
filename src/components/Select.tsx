@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { COLORS, DEFAULT_THEME, THEME_DATA } from "../constants";
 import useOnClickOutside from "../hooks/use-onclick-outside";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import {  ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { CloseIcon } from "./Icons";
 import Options from "./Options";
 import SearchInput from "./SearchInput";
