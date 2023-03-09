@@ -97,7 +97,7 @@ const Options: React.FC<OptionsProps> = ({
             className={
                 classNames && classNames.list
                     ? classNames.list
-                    : "max-h-72 overflow-y-auto overflow-y-scroll"
+                    : "h-32 overflow-y-scroll"
             }
         >
             {filterResult.map((item, index) => (

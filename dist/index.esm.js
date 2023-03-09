@@ -339,7 +339,7 @@ const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor
     }, [filterByText, removeValues]);
     return (require$$0.createElement("div", { role: "options", className: classNames && classNames.list
             ? classNames.list
-            : "max-h-72 overflow-y-auto overflow-y-scroll" },
+            : "h-32 overflow-y-scroll" },
         filterResult.map((item, index) => (require$$0.createElement(require$$0.Fragment, { key: index }, "options" in item ? (require$$0.createElement(require$$0.Fragment, null,
             require$$0.createElement("div", { className: "px-2.5" },
                 require$$0.createElement(GroupItem, { primaryColor: primaryColor || DEFAULT_THEME, item: item })),
