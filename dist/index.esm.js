@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, useMemo, useContext, useCallback, useState, useRef } from 'react';
+import require$$0, { useEffect, createContext, useMemo, useContext, useCallback, useState, useRef } from 'react';
 
 const COLORS = [
     "primary",
@@ -162,17 +162,41 @@ function useOnClickOutside(ref, handler) {
     }, [ref, handler]);
 }
 
+const React = require$$0;
+
+function ChevronUpDownIcon$1({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/React.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    d: "M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z",
+    clipRule: "evenodd"
+  }));
+}
+
+const ForwardRef = React.forwardRef(ChevronUpDownIcon$1);
+var ChevronUpDownIcon_1 = ForwardRef;
+
+var ChevronUpDownIcon = ChevronUpDownIcon_1;
+
 const CloseIcon = ({ className = "" }) => {
-    return (React.createElement("svg", { className: className, fill: "currentColor", viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" },
-        React.createElement("path", { fillRule: "evenodd", d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z", clipRule: "evenodd" })));
-};
-const ChevronIcon = ({ className = "" }) => {
-    return (React.createElement("svg", { className: className, fill: "currentColor", viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" },
-        React.createElement("path", { fillRule: "evenodd", d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z", clipRule: "evenodd" })));
+    return (require$$0.createElement("svg", { className: className, fill: "currentColor", viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" },
+        require$$0.createElement("path", { fillRule: "evenodd", d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z", clipRule: "evenodd" })));
 };
 const SearchIcon = ({ className = "" }) => {
-    return (React.createElement("svg", { className: className, fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg" },
-        React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" })));
+    return (require$$0.createElement("svg", { className: className, fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg" },
+        require$$0.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" })));
 };
 
 const SelectContext = createContext({
@@ -201,12 +225,12 @@ const SelectProvider = ({ value, handleValueChange, otherData, children }) => {
             classNames: otherData?.classNames || undefined
         };
     }, [handleValueChange, otherData, value]);
-    return React.createElement(SelectContext.Provider, { value: store }, children);
+    return require$$0.createElement(SelectContext.Provider, { value: store }, children);
 };
 
 const DisabledItem = ({ children }) => {
     const { classNames } = useContext(SelectContext);
-    return (React.createElement("div", { className: classNames && classNames.listDisabledItem
+    return (require$$0.createElement("div", { className: classNames && classNames.listDisabledItem
             ? classNames.listDisabledItem
             : "px-2 py-2 cursor-not-allowed truncate text-gray-400 select-none" }, children));
 };
@@ -249,18 +273,18 @@ const Item = ({ item, primaryColor }) => {
             ? classNames.listItem({ isSelected })
             : `${baseClass} ${selectedClass}`;
     }, [bgColor, bgHoverColor, classNames, isSelected, textHoverColor]);
-    return (React.createElement(React.Fragment, null, formatOptionLabel ? (React.createElement("div", { onClick: () => handleValueChange(item) }, formatOptionLabel({ ...item, isSelected }))) : (React.createElement(React.Fragment, null, item.disabled ? (React.createElement(DisabledItem, null, item.label)) : (React.createElement("li", { "aria-selected": isSelected, role: "option", onClick: () => handleValueChange(item), className: getItemClass() },
+    return (require$$0.createElement(require$$0.Fragment, null, formatOptionLabel ? (require$$0.createElement("div", { onClick: () => handleValueChange(item) }, formatOptionLabel({ ...item, isSelected }))) : (require$$0.createElement(require$$0.Fragment, null, item.disabled ? (require$$0.createElement(DisabledItem, null, item.label)) : (require$$0.createElement("li", { "aria-selected": isSelected, role: "option", onClick: () => handleValueChange(item), className: getItemClass() },
         item.label,
-        React.createElement("p", { className: "text-sm" }, item.description)))))));
+        require$$0.createElement("p", { className: "text-sm" }, item.description)))))));
 };
 
 const GroupItem = ({ item, primaryColor }) => {
     const { classNames, formatGroupLabel } = useSelectContext();
-    return (React.createElement(React.Fragment, null, item.options.length > 0 && (React.createElement(React.Fragment, null,
-        formatGroupLabel ? (React.createElement(React.Fragment, null, formatGroupLabel(item))) : (React.createElement("div", { className: classNames && classNames.listGroupLabel
+    return (require$$0.createElement(require$$0.Fragment, null, item.options.length > 0 && (require$$0.createElement(require$$0.Fragment, null,
+        formatGroupLabel ? (require$$0.createElement(require$$0.Fragment, null, formatGroupLabel(item))) : (require$$0.createElement("div", { className: classNames && classNames.listGroupLabel
                 ? classNames.listGroupLabel
                 : "pr-2 py-2 cursor-default select-none truncate font-bold text-gray-700" }, item.label)),
-        item.options.map((item, index) => (React.createElement(Item, { primaryColor: primaryColor, key: index, item: item })))))));
+        item.options.map((item, index) => (require$$0.createElement(Item, { primaryColor: primaryColor, key: index, item: item })))))));
 };
 
 const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor = DEFAULT_THEME }) => {
@@ -317,26 +341,26 @@ const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor
     const filterResult = useMemo(() => {
         return removeValues(filterByText());
     }, [filterByText, removeValues]);
-    return (React.createElement("div", { role: "options", className: classNames && classNames.list
+    return (require$$0.createElement("div", { role: "options", className: classNames && classNames.list
             ? classNames.list
             : "max-h-72 overflow-y-auto overflow-y-scroll" },
-        filterResult.map((item, index) => (React.createElement(React.Fragment, { key: index }, "options" in item ? (React.createElement(React.Fragment, null,
-            React.createElement("div", { className: "px-2.5" },
-                React.createElement(GroupItem, { primaryColor: primaryColor || DEFAULT_THEME, item: item })),
-            index + 1 < filterResult.length && React.createElement("hr", { className: "my-1" }))) : (React.createElement("div", { className: "px-2.5" },
-            React.createElement(Item, { primaryColor: primaryColor || DEFAULT_THEME, item: item })))))),
-        filterResult.length === 0 && React.createElement(DisabledItem, null, noOptionsMessage)));
+        filterResult.map((item, index) => (require$$0.createElement(require$$0.Fragment, { key: index }, "options" in item ? (require$$0.createElement(require$$0.Fragment, null,
+            require$$0.createElement("div", { className: "px-2.5" },
+                require$$0.createElement(GroupItem, { primaryColor: primaryColor || DEFAULT_THEME, item: item })),
+            index + 1 < filterResult.length && require$$0.createElement("hr", { className: "my-1" }))) : (require$$0.createElement("div", { className: "px-2.5" },
+            require$$0.createElement(Item, { primaryColor: primaryColor || DEFAULT_THEME, item: item })))))),
+        filterResult.length === 0 && require$$0.createElement(DisabledItem, null, noOptionsMessage)));
 };
 
 const SearchInput = ({ placeholder = "", value = "", onChange, name = "" }) => {
     const { classNames } = useContext(SelectContext);
-    return (React.createElement("div", { className: classNames && classNames.searchContainer
+    return (require$$0.createElement("div", { className: classNames && classNames.searchContainer
             ? classNames.searchContainer
             : "relative py-1 px-2.5" },
-        React.createElement(SearchIcon, { className: classNames && classNames.searchIcon
+        require$$0.createElement(SearchIcon, { className: classNames && classNames.searchIcon
                 ? classNames.searchIcon
                 : "absolute w-5 h-5 mt-2.5 pb-0.5 ml-2 text-gray-500" }),
-        React.createElement("input", { className: classNames && classNames.searchBox
+        require$$0.createElement("input", { className: classNames && classNames.searchBox
                 ? classNames.searchBox
                 : "w-full py-2 pl-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none", type: "text", placeholder: placeholder, value: value, onChange: onChange, name: name })));
 };
@@ -350,9 +374,9 @@ const Spinner = ({ primaryColor = DEFAULT_THEME }) => {
         }
         return THEME_DATA.text[DEFAULT_THEME];
     }, [primaryColor]);
-    return (React.createElement("svg", { className: `animate-spin mr-0.5 h-5 w-5 ${spinnerColor}`, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24" },
-        React.createElement("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: "currentColor", strokeWidth: "4" }),
-        React.createElement("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })));
+    return (require$$0.createElement("svg", { className: `animate-spin mr-0.5 h-5 w-5 ${spinnerColor}`, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24" },
+        require$$0.createElement("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: "currentColor", strokeWidth: "4" }),
+        require$$0.createElement("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })));
 };
 
 const Select = ({ options = [], value = null, onChange, placeholder = "Select...", searchInputPlaceholder = "Search...", isMultiple = false, isClearable = false, isSearchable = false, isDisabled = false, loading = false, menuIsOpen = false, noOptionsMessage = "No options found", primaryColor = DEFAULT_THEME, formatGroupLabel = null, formatOptionLabel = null, classNames }) => {
@@ -452,43 +476,43 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
             ? classNames.tagItem({ isDisabled })
             : `${baseClasse} ${disabledClass}`;
     }, [classNames, isDisabled]);
-    return (React.createElement(SelectProvider, { otherData: {
+    return (require$$0.createElement(SelectProvider, { otherData: {
             formatGroupLabel,
             formatOptionLabel,
             classNames
         }, value: value, handleValueChange: handleValueChange },
-        React.createElement("div", { className: "relative w-full", ref: ref },
-            React.createElement("div", { tabIndex: 0, "aria-expanded": open, onKeyDown: onPressEnterOrSpace, onClick: toggle, className: "bg-white cursor-default rounded-lg text-left border outline-16 border-primary px-3 placeholder-primary-500 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-primary-500 sm:text-sm flex" },
-                React.createElement("div", { className: "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full" }, !isMultiple ? (React.createElement("p", { className: "truncate cursor-default select-none" }, value && !Array.isArray(value) ? value.label : placeholder)) : (React.createElement(React.Fragment, null,
+        require$$0.createElement("div", { className: "relative w-full mt-1", ref: ref },
+            require$$0.createElement("div", { tabIndex: 0, "aria-expanded": open, onKeyDown: onPressEnterOrSpace, onClick: toggle, className: "bg-white cursor-default rounded-lg text-left border outline-16 border-primary px-3 placeholder-primary-500 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-primary-500 sm:text-sm flex" },
+                require$$0.createElement("div", { className: "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full" }, !isMultiple ? (require$$0.createElement("p", { className: "truncate cursor-default select-none" }, value && !Array.isArray(value) ? value.label : placeholder)) : (require$$0.createElement(require$$0.Fragment, null,
                     value === null && placeholder,
                     Array.isArray(value) &&
-                        value.map((item, index) => (React.createElement("div", { className: getTagItemClass(), key: index },
-                            React.createElement("p", { className: classNames && classNames.tagItemText
+                        value.map((item, index) => (require$$0.createElement("div", { className: getTagItemClass(), key: index },
+                            require$$0.createElement("p", { className: classNames && classNames.tagItemText
                                     ? classNames.tagItemText
                                     : "text-gray-600 truncate cursor-default select-none" }, item.label),
-                            !isDisabled && (React.createElement("div", { onClick: e => removeItem(e, item), className: classNames &&
+                            !isDisabled && (require$$0.createElement("div", { onClick: e => removeItem(e, item), className: classNames &&
                                     classNames.tagItemIconContainer
                                     ? classNames.tagItemIconContainer
                                     : "flex items-center px-1 cursor-pointer rounded-r-sm hover:bg-secondary-200 hover:text-secondary-600" },
-                                React.createElement(CloseIcon, { className: classNames && classNames.tagItemIcon
+                                require$$0.createElement(CloseIcon, { className: classNames && classNames.tagItemIcon
                                         ? classNames.tagItemIcon
                                         : "w-3 h-3 mt-0.5" }))))))))),
-                React.createElement("div", { className: "flex flex-none items-center py-1.5" },
-                    loading && (React.createElement("div", { className: "px-1.5" },
-                        React.createElement(Spinner, { primaryColor: primaryColor }))),
-                    isClearable && !isDisabled && value !== null && (React.createElement("div", { className: "px-1.5 cursor-pointer", onClick: clearValue },
-                        React.createElement(CloseIcon, { className: classNames && classNames.closeIcon
+                require$$0.createElement("div", { className: "flex flex-none items-center py-1.5" },
+                    loading && (require$$0.createElement("div", { className: "px-1.5" },
+                        require$$0.createElement(Spinner, { primaryColor: primaryColor }))),
+                    isClearable && !isDisabled && value !== null && (require$$0.createElement("div", { className: "px-1.5 cursor-pointer", onClick: clearValue },
+                        require$$0.createElement(CloseIcon, { className: classNames && classNames.closeIcon
                                 ? classNames.closeIcon
                                 : "w-5 h-5 p-0.5" }))),
-                    React.createElement("div", { className: "h-full" },
-                        React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                    React.createElement("div", { className: "px-1.5" },
-                        React.createElement(ChevronIcon, { className: `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}` })))),
-            open && !isDisabled && (React.createElement("div", { tabIndex: -1, className: classNames && classNames.menu
+                    require$$0.createElement("div", { className: "h-full" },
+                        require$$0.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
+                    require$$0.createElement("div", { className: "px-1.5" },
+                        require$$0.createElement(ChevronUpDownIcon, { className: "h-5 w-5 text-primary", "aria-hidden": "true" })))),
+            open && !isDisabled && (require$$0.createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu
                     : "absolute z-20 w-full bg-white shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700" },
-                isSearchable && (React.createElement(SearchInput, { value: inputValue, placeholder: searchInputPlaceholder, onChange: e => setInputValue(e.target.value) })),
-                React.createElement(Options, { list: list, noOptionsMessage: noOptionsMessage, text: inputValue, isMultiple: isMultiple, value: value, primaryColor: primaryColor || DEFAULT_THEME }))))));
+                isSearchable && (require$$0.createElement(SearchInput, { value: inputValue, placeholder: searchInputPlaceholder, onChange: e => setInputValue(e.target.value) })),
+                require$$0.createElement(Options, { list: list, noOptionsMessage: noOptionsMessage, text: inputValue, isMultiple: isMultiple, value: value, primaryColor: primaryColor || DEFAULT_THEME }))))));
 };
 
 export { Select as default };

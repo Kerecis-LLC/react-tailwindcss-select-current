@@ -1,10 +1,10 @@
 'use strict';
 
-var React = require('react');
+var require$$0 = require('react');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0);
 
 const COLORS = [
     "primary",
@@ -152,7 +152,7 @@ const THEME_DATA = {
 };
 
 function useOnClickOutside(ref, handler) {
-    React.useEffect(() => {
+    require$$0.useEffect(() => {
         const listener = (event) => {
             if (!ref.current || ref.current.contains(event.target)) {
                 return;
@@ -168,20 +168,44 @@ function useOnClickOutside(ref, handler) {
     }, [ref, handler]);
 }
 
+const React = require$$0__default["default"];
+
+function ChevronUpDownIcon$1({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/React.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    d: "M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z",
+    clipRule: "evenodd"
+  }));
+}
+
+const ForwardRef = React.forwardRef(ChevronUpDownIcon$1);
+var ChevronUpDownIcon_1 = ForwardRef;
+
+var ChevronUpDownIcon = ChevronUpDownIcon_1;
+
 const CloseIcon = ({ className = "" }) => {
-    return (React__default["default"].createElement("svg", { className: className, fill: "currentColor", viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" },
-        React__default["default"].createElement("path", { fillRule: "evenodd", d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z", clipRule: "evenodd" })));
-};
-const ChevronIcon = ({ className = "" }) => {
-    return (React__default["default"].createElement("svg", { className: className, fill: "currentColor", viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" },
-        React__default["default"].createElement("path", { fillRule: "evenodd", d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z", clipRule: "evenodd" })));
+    return (require$$0__default["default"].createElement("svg", { className: className, fill: "currentColor", viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" },
+        require$$0__default["default"].createElement("path", { fillRule: "evenodd", d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z", clipRule: "evenodd" })));
 };
 const SearchIcon = ({ className = "" }) => {
-    return (React__default["default"].createElement("svg", { className: className, fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg" },
-        React__default["default"].createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" })));
+    return (require$$0__default["default"].createElement("svg", { className: className, fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg" },
+        require$$0__default["default"].createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" })));
 };
 
-const SelectContext = React.createContext({
+const SelectContext = require$$0.createContext({
     value: null,
     handleValueChange: selected => {
         console.log("selected:", selected);
@@ -191,10 +215,10 @@ const SelectContext = React.createContext({
     classNames: undefined
 });
 const useSelectContext = () => {
-    return React.useContext(SelectContext);
+    return require$$0.useContext(SelectContext);
 };
 const SelectProvider = ({ value, handleValueChange, otherData, children }) => {
-    const store = React.useMemo(() => {
+    const store = require$$0.useMemo(() => {
         return {
             value,
             handleValueChange,
@@ -207,22 +231,22 @@ const SelectProvider = ({ value, handleValueChange, otherData, children }) => {
             classNames: otherData?.classNames || undefined
         };
     }, [handleValueChange, otherData, value]);
-    return React__default["default"].createElement(SelectContext.Provider, { value: store }, children);
+    return require$$0__default["default"].createElement(SelectContext.Provider, { value: store }, children);
 };
 
 const DisabledItem = ({ children }) => {
-    const { classNames } = React.useContext(SelectContext);
-    return (React__default["default"].createElement("div", { className: classNames && classNames.listDisabledItem
+    const { classNames } = require$$0.useContext(SelectContext);
+    return (require$$0__default["default"].createElement("div", { className: classNames && classNames.listDisabledItem
             ? classNames.listDisabledItem
             : "px-2 py-2 cursor-not-allowed truncate text-gray-400 select-none" }, children));
 };
 
 const Item = ({ item, primaryColor }) => {
     const { classNames, value, handleValueChange, formatOptionLabel } = useSelectContext();
-    const isSelected = React.useMemo(() => {
+    const isSelected = require$$0.useMemo(() => {
         return value !== null && !Array.isArray(value) && value.value === item.value;
     }, [item.value, value]);
-    const textHoverColor = React.useMemo(() => {
+    const textHoverColor = require$$0.useMemo(() => {
         if (COLORS.includes(primaryColor)) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
@@ -230,7 +254,7 @@ const Item = ({ item, primaryColor }) => {
         }
         return THEME_DATA.textHover[DEFAULT_THEME];
     }, [primaryColor]);
-    const bgColor = React.useMemo(() => {
+    const bgColor = require$$0.useMemo(() => {
         if (COLORS.includes(primaryColor)) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
@@ -238,7 +262,7 @@ const Item = ({ item, primaryColor }) => {
         }
         return THEME_DATA.bg[DEFAULT_THEME];
     }, [primaryColor]);
-    const bgHoverColor = React.useMemo(() => {
+    const bgHoverColor = require$$0.useMemo(() => {
         if (COLORS.includes(primaryColor)) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
@@ -246,7 +270,7 @@ const Item = ({ item, primaryColor }) => {
         }
         return THEME_DATA.bgHover[DEFAULT_THEME];
     }, [primaryColor]);
-    const getItemClass = React.useCallback(() => {
+    const getItemClass = require$$0.useCallback(() => {
         const baseClass = "block transition duration-200 px-2 py-2 cursor-pointer select-none truncate rounded";
         const selectedClass = isSelected
             ? `text-white ${bgColor}`
@@ -255,23 +279,23 @@ const Item = ({ item, primaryColor }) => {
             ? classNames.listItem({ isSelected })
             : `${baseClass} ${selectedClass}`;
     }, [bgColor, bgHoverColor, classNames, isSelected, textHoverColor]);
-    return (React__default["default"].createElement(React__default["default"].Fragment, null, formatOptionLabel ? (React__default["default"].createElement("div", { onClick: () => handleValueChange(item) }, formatOptionLabel({ ...item, isSelected }))) : (React__default["default"].createElement(React__default["default"].Fragment, null, item.disabled ? (React__default["default"].createElement(DisabledItem, null, item.label)) : (React__default["default"].createElement("li", { "aria-selected": isSelected, role: "option", onClick: () => handleValueChange(item), className: getItemClass() },
+    return (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, null, formatOptionLabel ? (require$$0__default["default"].createElement("div", { onClick: () => handleValueChange(item) }, formatOptionLabel({ ...item, isSelected }))) : (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, null, item.disabled ? (require$$0__default["default"].createElement(DisabledItem, null, item.label)) : (require$$0__default["default"].createElement("li", { "aria-selected": isSelected, role: "option", onClick: () => handleValueChange(item), className: getItemClass() },
         item.label,
-        React__default["default"].createElement("p", { className: "text-sm" }, item.description)))))));
+        require$$0__default["default"].createElement("p", { className: "text-sm" }, item.description)))))));
 };
 
 const GroupItem = ({ item, primaryColor }) => {
     const { classNames, formatGroupLabel } = useSelectContext();
-    return (React__default["default"].createElement(React__default["default"].Fragment, null, item.options.length > 0 && (React__default["default"].createElement(React__default["default"].Fragment, null,
-        formatGroupLabel ? (React__default["default"].createElement(React__default["default"].Fragment, null, formatGroupLabel(item))) : (React__default["default"].createElement("div", { className: classNames && classNames.listGroupLabel
+    return (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, null, item.options.length > 0 && (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, null,
+        formatGroupLabel ? (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, null, formatGroupLabel(item))) : (require$$0__default["default"].createElement("div", { className: classNames && classNames.listGroupLabel
                 ? classNames.listGroupLabel
                 : "pr-2 py-2 cursor-default select-none truncate font-bold text-gray-700" }, item.label)),
-        item.options.map((item, index) => (React__default["default"].createElement(Item, { primaryColor: primaryColor, key: index, item: item })))))));
+        item.options.map((item, index) => (require$$0__default["default"].createElement(Item, { primaryColor: primaryColor, key: index, item: item })))))));
 };
 
 const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor = DEFAULT_THEME }) => {
-    const { classNames } = React.useContext(SelectContext);
-    const filterByText = React.useCallback(() => {
+    const { classNames } = require$$0.useContext(SelectContext);
+    const filterByText = require$$0.useCallback(() => {
         const filterItem = (item) => {
             return item.label.toLowerCase().indexOf(text.toLowerCase()) > -1 || (item.description != null && item.description.toLowerCase().indexOf(text.toLowerCase()) > -1);
         };
@@ -292,7 +316,7 @@ const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor
         });
         return result;
     }, [text, list]);
-    const removeValues = React.useCallback((array) => {
+    const removeValues = require$$0.useCallback((array) => {
         if (!isMultiple) {
             return array;
         }
@@ -320,35 +344,35 @@ const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor
         }
         return array;
     }, [isMultiple, value]);
-    const filterResult = React.useMemo(() => {
+    const filterResult = require$$0.useMemo(() => {
         return removeValues(filterByText());
     }, [filterByText, removeValues]);
-    return (React__default["default"].createElement("div", { role: "options", className: classNames && classNames.list
+    return (require$$0__default["default"].createElement("div", { role: "options", className: classNames && classNames.list
             ? classNames.list
             : "max-h-72 overflow-y-auto overflow-y-scroll" },
-        filterResult.map((item, index) => (React__default["default"].createElement(React__default["default"].Fragment, { key: index }, "options" in item ? (React__default["default"].createElement(React__default["default"].Fragment, null,
-            React__default["default"].createElement("div", { className: "px-2.5" },
-                React__default["default"].createElement(GroupItem, { primaryColor: primaryColor || DEFAULT_THEME, item: item })),
-            index + 1 < filterResult.length && React__default["default"].createElement("hr", { className: "my-1" }))) : (React__default["default"].createElement("div", { className: "px-2.5" },
-            React__default["default"].createElement(Item, { primaryColor: primaryColor || DEFAULT_THEME, item: item })))))),
-        filterResult.length === 0 && React__default["default"].createElement(DisabledItem, null, noOptionsMessage)));
+        filterResult.map((item, index) => (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, { key: index }, "options" in item ? (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, null,
+            require$$0__default["default"].createElement("div", { className: "px-2.5" },
+                require$$0__default["default"].createElement(GroupItem, { primaryColor: primaryColor || DEFAULT_THEME, item: item })),
+            index + 1 < filterResult.length && require$$0__default["default"].createElement("hr", { className: "my-1" }))) : (require$$0__default["default"].createElement("div", { className: "px-2.5" },
+            require$$0__default["default"].createElement(Item, { primaryColor: primaryColor || DEFAULT_THEME, item: item })))))),
+        filterResult.length === 0 && require$$0__default["default"].createElement(DisabledItem, null, noOptionsMessage)));
 };
 
 const SearchInput = ({ placeholder = "", value = "", onChange, name = "" }) => {
-    const { classNames } = React.useContext(SelectContext);
-    return (React__default["default"].createElement("div", { className: classNames && classNames.searchContainer
+    const { classNames } = require$$0.useContext(SelectContext);
+    return (require$$0__default["default"].createElement("div", { className: classNames && classNames.searchContainer
             ? classNames.searchContainer
             : "relative py-1 px-2.5" },
-        React__default["default"].createElement(SearchIcon, { className: classNames && classNames.searchIcon
+        require$$0__default["default"].createElement(SearchIcon, { className: classNames && classNames.searchIcon
                 ? classNames.searchIcon
                 : "absolute w-5 h-5 mt-2.5 pb-0.5 ml-2 text-gray-500" }),
-        React__default["default"].createElement("input", { className: classNames && classNames.searchBox
+        require$$0__default["default"].createElement("input", { className: classNames && classNames.searchBox
                 ? classNames.searchBox
                 : "w-full py-2 pl-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none", type: "text", placeholder: placeholder, value: value, onChange: onChange, name: name })));
 };
 
 const Spinner = ({ primaryColor = DEFAULT_THEME }) => {
-    const spinnerColor = React.useMemo(() => {
+    const spinnerColor = require$$0.useMemo(() => {
         if (COLORS.includes(primaryColor)) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
@@ -356,17 +380,17 @@ const Spinner = ({ primaryColor = DEFAULT_THEME }) => {
         }
         return THEME_DATA.text[DEFAULT_THEME];
     }, [primaryColor]);
-    return (React__default["default"].createElement("svg", { className: `animate-spin mr-0.5 h-5 w-5 ${spinnerColor}`, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24" },
-        React__default["default"].createElement("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: "currentColor", strokeWidth: "4" }),
-        React__default["default"].createElement("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })));
+    return (require$$0__default["default"].createElement("svg", { className: `animate-spin mr-0.5 h-5 w-5 ${spinnerColor}`, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24" },
+        require$$0__default["default"].createElement("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: "currentColor", strokeWidth: "4" }),
+        require$$0__default["default"].createElement("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })));
 };
 
 const Select = ({ options = [], value = null, onChange, placeholder = "Select...", searchInputPlaceholder = "Search...", isMultiple = false, isClearable = false, isSearchable = false, isDisabled = false, loading = false, menuIsOpen = false, noOptionsMessage = "No options found", primaryColor = DEFAULT_THEME, formatGroupLabel = null, formatOptionLabel = null, classNames }) => {
-    const [open, setOpen] = React.useState(menuIsOpen);
-    const [list, setList] = React.useState(options);
-    const [inputValue, setInputValue] = React.useState("");
-    const ref = React.useRef(null);
-    React.useEffect(() => {
+    const [open, setOpen] = require$$0.useState(menuIsOpen);
+    const [list, setList] = require$$0.useState(options);
+    const [inputValue, setInputValue] = require$$0.useState("");
+    const ref = require$$0.useRef(null);
+    require$$0.useEffect(() => {
         const formatItem = (item) => {
             if ("disabled" in item)
                 return item;
@@ -387,25 +411,25 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
             }
         }));
     }, [options]);
-    const toggle = React.useCallback(() => {
+    const toggle = require$$0.useCallback(() => {
         if (!isDisabled) {
             setOpen(!open);
         }
     }, [isDisabled, open]);
-    const closeDropDown = React.useCallback(() => {
+    const closeDropDown = require$$0.useCallback(() => {
         if (open)
             setOpen(false);
     }, [open]);
     useOnClickOutside(ref, () => {
         closeDropDown();
     });
-    const onPressEnterOrSpace = React.useCallback((e) => {
+    const onPressEnterOrSpace = require$$0.useCallback((e) => {
         e.preventDefault();
         if ((e.code === "Enter" || e.code === "Space") && !isDisabled) {
             toggle();
         }
     }, [isDisabled, toggle]);
-    const handleValueChange = React.useCallback((selected) => {
+    const handleValueChange = require$$0.useCallback((selected) => {
         function update() {
             if (!isMultiple && !Array.isArray(value)) {
                 closeDropDown();
@@ -419,18 +443,18 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
             update();
         }
     }, [closeDropDown, isMultiple, onChange, value]);
-    const clearValue = React.useCallback((e) => {
+    const clearValue = require$$0.useCallback((e) => {
         e.stopPropagation();
         onChange(null);
     }, [onChange]);
-    const removeItem = React.useCallback((e, item) => {
+    const removeItem = require$$0.useCallback((e, item) => {
         if (isMultiple && Array.isArray(value) && value.length) {
             e.stopPropagation();
             const result = value.filter(current => item.value !== current.value);
             onChange(result.length ? result : null);
         }
     }, [isMultiple, onChange, value]);
-    React.useCallback(() => {
+    require$$0.useCallback(() => {
         let ringColor = THEME_DATA.ring[DEFAULT_THEME];
         if (COLORS.includes(primaryColor)) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -451,50 +475,50 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
             ? classNames.menuButton({ isDisabled })
             : defaultClass;
     }, [classNames, isDisabled, primaryColor]);
-    const getTagItemClass = React.useCallback(() => {
+    const getTagItemClass = require$$0.useCallback(() => {
         const baseClasse = "bg-gray-200 border rounded-sm flex space-x-1";
         const disabledClass = isDisabled ? "border-gray-500 px-1" : "pl-1";
         return classNames && classNames.tagItem
             ? classNames.tagItem({ isDisabled })
             : `${baseClasse} ${disabledClass}`;
     }, [classNames, isDisabled]);
-    return (React__default["default"].createElement(SelectProvider, { otherData: {
+    return (require$$0__default["default"].createElement(SelectProvider, { otherData: {
             formatGroupLabel,
             formatOptionLabel,
             classNames
         }, value: value, handleValueChange: handleValueChange },
-        React__default["default"].createElement("div", { className: "relative w-full", ref: ref },
-            React__default["default"].createElement("div", { tabIndex: 0, "aria-expanded": open, onKeyDown: onPressEnterOrSpace, onClick: toggle, className: "bg-white cursor-default rounded-lg text-left border outline-16 border-primary px-3 placeholder-primary-500 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-primary-500 sm:text-sm flex" },
-                React__default["default"].createElement("div", { className: "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full" }, !isMultiple ? (React__default["default"].createElement("p", { className: "truncate cursor-default select-none" }, value && !Array.isArray(value) ? value.label : placeholder)) : (React__default["default"].createElement(React__default["default"].Fragment, null,
+        require$$0__default["default"].createElement("div", { className: "relative w-full mt-1", ref: ref },
+            require$$0__default["default"].createElement("div", { tabIndex: 0, "aria-expanded": open, onKeyDown: onPressEnterOrSpace, onClick: toggle, className: "bg-white cursor-default rounded-lg text-left border outline-16 border-primary px-3 placeholder-primary-500 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-primary-500 sm:text-sm flex" },
+                require$$0__default["default"].createElement("div", { className: "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full" }, !isMultiple ? (require$$0__default["default"].createElement("p", { className: "truncate cursor-default select-none" }, value && !Array.isArray(value) ? value.label : placeholder)) : (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, null,
                     value === null && placeholder,
                     Array.isArray(value) &&
-                        value.map((item, index) => (React__default["default"].createElement("div", { className: getTagItemClass(), key: index },
-                            React__default["default"].createElement("p", { className: classNames && classNames.tagItemText
+                        value.map((item, index) => (require$$0__default["default"].createElement("div", { className: getTagItemClass(), key: index },
+                            require$$0__default["default"].createElement("p", { className: classNames && classNames.tagItemText
                                     ? classNames.tagItemText
                                     : "text-gray-600 truncate cursor-default select-none" }, item.label),
-                            !isDisabled && (React__default["default"].createElement("div", { onClick: e => removeItem(e, item), className: classNames &&
+                            !isDisabled && (require$$0__default["default"].createElement("div", { onClick: e => removeItem(e, item), className: classNames &&
                                     classNames.tagItemIconContainer
                                     ? classNames.tagItemIconContainer
                                     : "flex items-center px-1 cursor-pointer rounded-r-sm hover:bg-secondary-200 hover:text-secondary-600" },
-                                React__default["default"].createElement(CloseIcon, { className: classNames && classNames.tagItemIcon
+                                require$$0__default["default"].createElement(CloseIcon, { className: classNames && classNames.tagItemIcon
                                         ? classNames.tagItemIcon
                                         : "w-3 h-3 mt-0.5" }))))))))),
-                React__default["default"].createElement("div", { className: "flex flex-none items-center py-1.5" },
-                    loading && (React__default["default"].createElement("div", { className: "px-1.5" },
-                        React__default["default"].createElement(Spinner, { primaryColor: primaryColor }))),
-                    isClearable && !isDisabled && value !== null && (React__default["default"].createElement("div", { className: "px-1.5 cursor-pointer", onClick: clearValue },
-                        React__default["default"].createElement(CloseIcon, { className: classNames && classNames.closeIcon
+                require$$0__default["default"].createElement("div", { className: "flex flex-none items-center py-1.5" },
+                    loading && (require$$0__default["default"].createElement("div", { className: "px-1.5" },
+                        require$$0__default["default"].createElement(Spinner, { primaryColor: primaryColor }))),
+                    isClearable && !isDisabled && value !== null && (require$$0__default["default"].createElement("div", { className: "px-1.5 cursor-pointer", onClick: clearValue },
+                        require$$0__default["default"].createElement(CloseIcon, { className: classNames && classNames.closeIcon
                                 ? classNames.closeIcon
                                 : "w-5 h-5 p-0.5" }))),
-                    React__default["default"].createElement("div", { className: "h-full" },
-                        React__default["default"].createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                    React__default["default"].createElement("div", { className: "px-1.5" },
-                        React__default["default"].createElement(ChevronIcon, { className: `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}` })))),
-            open && !isDisabled && (React__default["default"].createElement("div", { tabIndex: -1, className: classNames && classNames.menu
+                    require$$0__default["default"].createElement("div", { className: "h-full" },
+                        require$$0__default["default"].createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
+                    require$$0__default["default"].createElement("div", { className: "px-1.5" },
+                        require$$0__default["default"].createElement(ChevronUpDownIcon, { className: "h-5 w-5 text-primary", "aria-hidden": "true" })))),
+            open && !isDisabled && (require$$0__default["default"].createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu
                     : "absolute z-20 w-full bg-white shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700" },
-                isSearchable && (React__default["default"].createElement(SearchInput, { value: inputValue, placeholder: searchInputPlaceholder, onChange: e => setInputValue(e.target.value) })),
-                React__default["default"].createElement(Options, { list: list, noOptionsMessage: noOptionsMessage, text: inputValue, isMultiple: isMultiple, value: value, primaryColor: primaryColor || DEFAULT_THEME }))))));
+                isSearchable && (require$$0__default["default"].createElement(SearchInput, { value: inputValue, placeholder: searchInputPlaceholder, onChange: e => setInputValue(e.target.value) })),
+                require$$0__default["default"].createElement(Options, { list: list, noOptionsMessage: noOptionsMessage, text: inputValue, isMultiple: isMultiple, value: value, primaryColor: primaryColor || DEFAULT_THEME }))))));
 };
 
 module.exports = Select;

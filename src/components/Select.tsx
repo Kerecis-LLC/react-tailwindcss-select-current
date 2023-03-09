@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { COLORS, DEFAULT_THEME, THEME_DATA } from "../constants";
 import useOnClickOutside from "../hooks/use-onclick-outside";
-
-import { ChevronIcon, CloseIcon } from "./Icons";
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { CloseIcon } from "./Icons";
 import Options from "./Options";
 import SearchInput from "./SearchInput";
 import SelectProvider from "./SelectProvider";
@@ -199,7 +199,7 @@ const Select: React.FC<SelectProps> = ({
             value={value}
             handleValueChange={handleValueChange}
         >
-            <div className="relative w-full" ref={ref}>
+            <div className="relative w-full mt-1" ref={ref}>
                 <div
                     tabIndex={0}
                     aria-expanded={open}
@@ -277,11 +277,10 @@ const Select: React.FC<SelectProps> = ({
                         </div>
 
                         <div className="px-1.5">
-                            <ChevronIcon
-                                className={`transition duration-300 w-6 h-6 p-0.5${
-                                    open ? " transform rotate-90 text-gray-500" : " text-gray-300"
-                                }`}
-                            />
+                        <ChevronUpDownIcon
+                      className="h-5 w-5 text-primary"
+                      aria-hidden="true"
+                    />
                         </div>
                     </div>
                 </div>
