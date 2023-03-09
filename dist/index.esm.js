@@ -497,7 +497,7 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                                 : "w-5 h-5 p-0.5" }))),
                     require$$0.createElement("div", { className: "h-full" },
                         require$$0.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                    require$$0.createElement("div", { className: "px-1.5" },
+                    require$$0.createElement("div", { className: "px-2" },
                         require$$0.createElement(ChevronUpDownIcon, { className: "h-5 w-5 text-primary", "aria-hidden": "true" })))),
             open && !isDisabled && (require$$0.createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu

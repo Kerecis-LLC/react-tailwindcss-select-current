@@ -276,7 +276,7 @@ const Select: React.FC<SelectProps> = ({
                             <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
                         </div>
 
-                        <div className="px-1.5">
+                        <div className="px-2">
                         <ChevronUpDownIcon
                       className="h-5 w-5 text-primary"
                       aria-hidden="true"
