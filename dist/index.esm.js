@@ -353,9 +353,7 @@ const SearchInput = ({ placeholder = "", value = "", onChange, name = "" }) => {
     return (require$$0.createElement("div", { className: classNames && classNames.searchContainer
             ? classNames.searchContainer
             : "relative py-1 px-2.5" },
-        require$$0.createElement("input", { className: classNames && classNames.searchBox
-                ? classNames.searchBox
-                : "w-full py-2 pl-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none", type: "text", placeholder: placeholder, value: value, onChange: onChange, name: name })));
+        require$$0.createElement("input", { className: "w-full py-2 p2-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none", type: "text", placeholder: placeholder, value: value, onChange: onChange, name: name })));
 };
 
 const Spinner = ({ primaryColor = DEFAULT_THEME }) => {

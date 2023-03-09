@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 
-import { SearchIcon } from "./Icons";
 import { SelectContext } from "./SelectProvider";
 
 interface SearchInputProps {
@@ -27,9 +26,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         >
             <input
                 className={
-                    classNames && classNames.searchBox
-                        ? classNames.searchBox
-                        : "w-full py-2 pl-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none"
+                    "w-full py-2 p2-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none"
                 }
                 type="text"
                 placeholder={placeholder}
