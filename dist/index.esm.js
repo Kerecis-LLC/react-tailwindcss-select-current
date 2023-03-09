@@ -488,7 +488,7 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                                 require$$0.createElement(CloseIcon, { className: classNames && classNames.tagItemIcon
                                         ? classNames.tagItemIcon
                                         : "w-3 h-3 mt-0.5" }))))))))),
-                require$$0.createElement("div", { className: "flex flex-none items-center py-1.5" },
+                require$$0.createElement("div", { className: "flex flex-none items-center py-2" },
                     loading && (require$$0.createElement("div", { className: "px-1.5" },
                         require$$0.createElement(Spinner, { primaryColor: primaryColor }))),
                     isClearable && !isDisabled && value !== null && (require$$0.createElement("div", { className: "px-1.5 cursor-pointer", onClick: clearValue },

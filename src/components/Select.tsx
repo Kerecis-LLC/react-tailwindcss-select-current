@@ -253,7 +253,7 @@ const Select: React.FC<SelectProps> = ({
                         )}
                     </div>
 
-                    <div className="flex flex-none items-center py-1.5">
+                    <div className="flex flex-none items-center py-2">
                         {loading && (
                             <div className="px-1.5">
                                 <Spinner primaryColor={primaryColor} />
