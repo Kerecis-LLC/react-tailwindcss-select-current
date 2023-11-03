@@ -90,7 +90,7 @@ const THEME_DATA = {
         rose: "focus:ring-rose-500/20"
     },
     borderFocus: {
-        primary: "focus:border-primary-500",
+        primary: "focus:border-green",
         blue: "focus:border-blue-500",
         orange: "focus:border-orange-500",
         yellow: "focus:border-yellow-500",
@@ -359,7 +359,7 @@ const SearchInput = ({ placeholder = "", value = "", onChange, name = "" }) => {
     return (require$$0__default["default"].createElement("div", { className: classNames && classNames.searchContainer
             ? classNames.searchContainer
             : "relative py-1 px-2.5" },
-        require$$0__default["default"].createElement("input", { className: "w-full py-2 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none focus:outline-none focus:border-primary-700 focus:outline-none focus:ring-primary-50", type: "text", placeholder: placeholder, value: value, onChange: onChange, name: name })));
+        require$$0__default["default"].createElement("input", { className: "w-full py-2 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none focus:outline-none focus:border-green focus:outline-none focus:ring-primary-50", type: "text", placeholder: placeholder, value: value, onChange: onChange, name: name })));
 };
 
 const Spinner = ({ primaryColor = DEFAULT_THEME }) => {
@@ -479,7 +479,7 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
             classNames
         }, value: value, handleValueChange: handleValueChange },
         require$$0__default["default"].createElement("div", { className: "relative w-full mt-1", ref: ref },
-            require$$0__default["default"].createElement("div", { tabIndex: 0, "aria-expanded": open, onKeyDown: onPressEnterOrSpace, onClick: toggle, className: "bg-white cursor-default rounded-lg text-left border outline-16 border-primary px-3 placeholder-primary-500 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-primary-500 sm:text-sm flex" },
+            require$$0__default["default"].createElement("div", { tabIndex: 0, "aria-expanded": open, onKeyDown: onPressEnterOrSpace, onClick: toggle, className: "bg-white cursor-default rounded-lg text-left border outline-16 border-green px-3 placeholder-primary-500 shadow-sm focus:border-green focus:outline-none focus:ring-primary-500 sm:text-sm flex" },
                 require$$0__default["default"].createElement("div", { className: "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full" }, !isMultiple ? (require$$0__default["default"].createElement("p", { className: "truncate cursor-default select-none" }, value && !Array.isArray(value) ? value.label : placeholder)) : (require$$0__default["default"].createElement(require$$0__default["default"].Fragment, null,
                     value === null && placeholder,
                     Array.isArray(value) &&

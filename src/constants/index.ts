@@ -84,7 +84,7 @@ export const THEME_DATA = {
         rose: "focus:ring-rose-500/20"
     },
     borderFocus: {
-        primary: "focus:border-primary-500",
+        primary: "focus:border-green",
         blue: "focus:border-blue-500",
         orange: "focus:border-orange-500",
         yellow: "focus:border-yellow-500",

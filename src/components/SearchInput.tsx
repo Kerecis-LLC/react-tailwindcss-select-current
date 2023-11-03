@@ -26,7 +26,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         >
             <input
                 className={
-                    "w-full py-2 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none focus:outline-none focus:border-primary-700 focus:outline-none focus:ring-primary-50"
+                    "w-full py-2 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none focus:outline-none focus:border-green focus:outline-none focus:ring-primary-50"
                 }
                 type="text"
                 placeholder={placeholder}
