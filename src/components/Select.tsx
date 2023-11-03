@@ -205,7 +205,7 @@ const Select: React.FC<SelectProps> = ({
                     aria-expanded={open}
                     onKeyDown={onPressEnterOrSpace}
                     onClick={toggle}
-                    className="bg-white cursor-default rounded-lg text-left border outline-16 border-green px-3 placeholder-primary-500 shadow-sm focus:border-green focus:outline-none focus:ring-primary-500 sm:text-sm flex"
+                    className="bg-white cursor-default rounded-lg text-left border outline-16 border-lightGreen px-3 placeholder-primary-500 shadow-sm focus:border-lightGreen focus:outline-none focus:ring-primary-500 sm:text-sm flex"
                 >
                     <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full">
                         {!isMultiple ? (
