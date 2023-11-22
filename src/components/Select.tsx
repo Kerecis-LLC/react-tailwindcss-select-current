@@ -1,8 +1,9 @@
+import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { COLORS, DEFAULT_THEME, THEME_DATA } from "../constants";
 import useOnClickOutside from "../hooks/use-onclick-outside";
-import {  ChevronUpDownIcon } from "@heroicons/react/20/solid";
+
 import { CloseIcon } from "./Icons";
 import Options from "./Options";
 import SearchInput from "./SearchInput";
@@ -207,7 +208,7 @@ const Select: React.FC<SelectProps> = ({
                     onClick={toggle}
                     className="bg-white cursor-default rounded-lg text-left border outline-16 border-lightGreen px-3 placeholder-primary-500 shadow-sm focus:border-lightGreen focus:outline-none focus:ring-primary-500 sm:text-sm flex"
                 >
-                    <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-full">
+                    <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1 w-1/2">
                         {!isMultiple ? (
                             <p className="truncate cursor-default select-none">
                                 {value && !Array.isArray(value) ? value.label : placeholder}
@@ -277,10 +278,10 @@ const Select: React.FC<SelectProps> = ({
                         </div>
 
                         <div className="px-2">
-                        <ChevronUpDownIcon
-                      className="h-5 w-5 text-primary"
-                      aria-hidden="true"
-                    />
+                            <ChevronUpDownIcon
+                                className="h-5 w-5 text-primary"
+                                aria-hidden="true"
+                            />
                         </div>
                     </div>
                 </div>
