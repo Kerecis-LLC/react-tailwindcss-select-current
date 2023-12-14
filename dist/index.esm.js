@@ -1,5 +1,33 @@
 import require$$0, { useEffect, createContext, useMemo, useContext, useCallback, useState, useRef } from 'react';
 
+const React = require$$0;
+
+function ChevronUpDownIcon$1({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/React.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    d: "M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z",
+    clipRule: "evenodd"
+  }));
+}
+
+const ForwardRef = React.forwardRef(ChevronUpDownIcon$1);
+var ChevronUpDownIcon_1 = ForwardRef;
+
+var ChevronUpDownIcon = ChevronUpDownIcon_1;
+
 const COLORS = [
     "primary",
     "blue",
@@ -162,34 +190,6 @@ function useOnClickOutside(ref, handler) {
     }, [ref, handler]);
 }
 
-const React = require$$0;
-
-function ChevronUpDownIcon$1({
-  title,
-  titleId,
-  ...props
-}, svgRef) {
-  return /*#__PURE__*/React.createElement("svg", Object.assign({
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 20 20",
-    fill: "currentColor",
-    "aria-hidden": "true",
-    ref: svgRef,
-    "aria-labelledby": titleId
-  }, props), title ? /*#__PURE__*/React.createElement("title", {
-    id: titleId
-  }, title) : null, /*#__PURE__*/React.createElement("path", {
-    fillRule: "evenodd",
-    d: "M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z",
-    clipRule: "evenodd"
-  }));
-}
-
-const ForwardRef = React.forwardRef(ChevronUpDownIcon$1);
-var ChevronUpDownIcon_1 = ForwardRef;
-
-var ChevronUpDownIcon = ChevronUpDownIcon_1;
-
 const CloseIcon = ({ className = "" }) => {
     return (require$$0.createElement("svg", { className: className, fill: "currentColor", viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" },
         require$$0.createElement("path", { fillRule: "evenodd", d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z", clipRule: "evenodd" })));
@@ -287,7 +287,9 @@ const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor
     const { classNames } = useContext(SelectContext);
     const filterByText = useCallback(() => {
         const filterItem = (item) => {
-            return item.label.toLowerCase().indexOf(text.toLowerCase()) > -1 || (item.description != null && item.description.toLowerCase().indexOf(text.toLowerCase()) > -1);
+            return (item.label.toLowerCase().indexOf(text.toLowerCase()) > -1 ||
+                (item.description != null &&
+                    item.description.toLowerCase().indexOf(text.toLowerCase()) > -1));
         };
         let result = list.map(item => {
             if ("options" in item) {
@@ -337,10 +339,8 @@ const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor
     const filterResult = useMemo(() => {
         return removeValues(filterByText());
     }, [filterByText, removeValues]);
-    return (require$$0.createElement("div", { role: "options", className: classNames && classNames.list
-            ? classNames.list
-            : "h-32 overflow-y-scroll" },
-        filterResult.map((item, index) => (require$$0.createElement(require$$0.Fragment, { key: index }, "options" in item ? (require$$0.createElement(require$$0.Fragment, null,
+    return (require$$0.createElement("div", { role: "options", className: classNames && classNames.list ? classNames.list : "h-32 overflow-y-scroll" },
+        filterResult.slice(0, 100).map((item, index) => (require$$0.createElement(require$$0.Fragment, { key: index }, "options" in item ? (require$$0.createElement(require$$0.Fragment, null,
             require$$0.createElement("div", { className: "px-2.5" },
                 require$$0.createElement(GroupItem, { primaryColor: primaryColor || DEFAULT_THEME, item: item })),
             index + 1 < filterResult.length && require$$0.createElement("hr", { className: "my-1" }))) : (require$$0.createElement("div", { className: "px-2.5" },
